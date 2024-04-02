@@ -68,7 +68,8 @@ namespace FuelMarketplace.Tests
         {
             A.CallTo(() => _offerRepository.GetOfferByIdAsync(1, A<CancellationToken>._)).Returns(null as GetOfferDto);
 
-            await Assert.ThrowsAsync<KeyNotFoundException>(() => _offerService.GetOfferByIdAsync(1, default));
+            Func<Task> act = async () => await _offerService.GetOfferByIdAsync(1, default);
+            await act.Should().ThrowAsync<KeyNotFoundException>();
         }
 
         [Fact]
@@ -96,7 +97,8 @@ namespace FuelMarketplace.Tests
         {
             A.CallTo(() => _offerRepository.GetOffersBySalesPointIdAsync(1, A<CancellationToken>._))!.Returns(null as List<GetOfferDto>);
 
-            await Assert.ThrowsAsync<KeyNotFoundException>(() => _offerService.GetOfferBySalesPointIdAsync(1, default));
+            Func<Task> act = async () => await _offerService.GetOfferBySalesPointIdAsync(1, default);
+            await act.Should().ThrowAsync<KeyNotFoundException>();
         }
 
         [Fact]
@@ -132,7 +134,8 @@ namespace FuelMarketplace.Tests
         {
             A.CallTo(() => _offerRepository.CheckIfOfferExistsAsync(1, A<CancellationToken>._)).Returns(false);
 
-            await Assert.ThrowsAsync<KeyNotFoundException>(() => _offerService.DeleteOfferAsync(1, 1, default));
+            Func<Task> act = async () => await _offerService.DeleteOfferAsync(1, 1, default);
+            await act.Should().ThrowAsync<KeyNotFoundException>();
         }
 
         [Fact]
@@ -141,7 +144,8 @@ namespace FuelMarketplace.Tests
             A.CallTo(() => _offerRepository.CheckIfOfferExistsAsync(1, A<CancellationToken>._)).Returns(true);
             A.CallTo(() => _offerRepository.CheckIfOfferBelongsToUserAsync(1, 1, A<CancellationToken>._)).Returns(false);
 
-            await Assert.ThrowsAsync<AuthorizationException>(() => _offerService.DeleteOfferAsync(1, 1, default));
+            Func<Task> act = async () => await _offerService.DeleteOfferAsync(1, 1, default);
+            await act.Should().ThrowAsync<AuthorizationException>();
         }
 
         [Fact]
@@ -181,9 +185,10 @@ namespace FuelMarketplace.Tests
 
             A.CallTo(() => _offerRepository.CheckIfOfferExistsAsync(1, A<CancellationToken>._)).Returns(false);
 
-            await Assert.ThrowsAsync<KeyNotFoundException>(() => _offerService.EditOfferAsync(1, offer, default));
-        }
+            Func<Task> act = async () => await _offerService.EditOfferAsync(1, offer, default);
 
+            await act.Should().ThrowAsync<KeyNotFoundException>();
+        }
         [Fact]
         public async Task EditOfferAsync_UserIsNotOwner_ThrowsAuthorizationException()
         {
@@ -200,7 +205,9 @@ namespace FuelMarketplace.Tests
             A.CallTo(() => _offerRepository.CheckIfOfferExistsAsync(1, A<CancellationToken>._)).Returns(true);
             A.CallTo(() => _offerRepository.CheckIfOfferBelongsToUserAsync(1, 1, A<CancellationToken>._)).Returns(false);
 
-            await Assert.ThrowsAsync<AuthorizationException>(() => _offerService.EditOfferAsync(1, offer, default));
+            Func<Task> act = async () => await _offerService.EditOfferAsync(1, offer, default);
+
+            await act.Should().ThrowAsync<AuthorizationException>();
         }
 
         [Fact]
@@ -220,7 +227,8 @@ namespace FuelMarketplace.Tests
             A.CallTo(() => _offerRepository.CheckIfOfferBelongsToUserAsync(1, 1, A<CancellationToken>._)).Returns(true);
             A.CallTo(() => _salesPointRepository.CheckIfSalesPointBelongsToUserAsync(1, 1, A<CancellationToken>._)).Returns(false);
 
-            await Assert.ThrowsAsync<AuthorizationException>(() => _offerService.EditOfferAsync(1, offer, default));
+            Func<Task> act = async () => await _offerService.EditOfferAsync(1, offer, default);
+            await act.Should().ThrowAsync<AuthorizationException>();
         }
 
         [Fact]
@@ -281,7 +289,9 @@ namespace FuelMarketplace.Tests
 
             A.CallTo(() => _offerRepository.CheckIfOfferExistsAsync(1, A<CancellationToken>._)).Returns(false);
 
-            await Assert.ThrowsAsync<KeyNotFoundException>(() => _offerService.AddCommentAsync(1, comment, default));
+            Func<Task> act = async () => await _offerService.AddCommentAsync(1, comment, default);
+
+            await act.Should().ThrowAsync<KeyNotFoundException>();
         }
 
         [Fact]
@@ -300,7 +310,9 @@ namespace FuelMarketplace.Tests
         {
             A.CallTo(() => _offerRepository.CheckIfCommentExistsAsync(1, A<CancellationToken>._)).Returns(false);
 
-            await Assert.ThrowsAsync<KeyNotFoundException>(() => _offerService.DeleteCommentAsync(1, 1, default));
+            Func<Task> act = async () => await _offerService.DeleteCommentAsync(1, 1, default);
+
+            await act.Should().ThrowAsync<KeyNotFoundException>();
         }
 
         [Fact]
@@ -309,7 +321,8 @@ namespace FuelMarketplace.Tests
             A.CallTo(() => _offerRepository.CheckIfCommentExistsAsync(1, A<CancellationToken>._)).Returns(true);
             A.CallTo(() => _offerRepository.CheckIfCommentBelongsToUserAsync(1, 1, A<CancellationToken>._)).Returns(false);
 
-            await Assert.ThrowsAsync<AuthorizationException>(() => _offerService.DeleteCommentAsync(1, 1, default));
+            Func<Task> act = async () => await _offerService.DeleteCommentAsync(1, 1, default);
+            await act.Should().ThrowAsync<AuthorizationException>();
         }
 
         [Fact]
@@ -340,9 +353,10 @@ namespace FuelMarketplace.Tests
 
             A.CallTo(() => _offerRepository.CheckIfCommentExistsAsync(1, A<CancellationToken>._)).Returns(false);
 
-            await Assert.ThrowsAsync<KeyNotFoundException>(() => _offerService.EditCommentAsync(1, comment, default));
-        }
+            Func<Task> act = async () => await _offerService.EditCommentAsync(1, comment, default);
 
+            await act.Should().ThrowAsync<KeyNotFoundException>();
+        }
 
         [Fact]
         public async Task EditCommentAsync_UserIsNotOwner_ThrowsAuthorizationException()
@@ -356,7 +370,8 @@ namespace FuelMarketplace.Tests
             A.CallTo(() => _offerRepository.CheckIfCommentExistsAsync(1, A<CancellationToken>._)).Returns(true);
             A.CallTo(() => _offerRepository.CheckIfCommentBelongsToUserAsync(1, 1, A<CancellationToken>._)).Returns(false);
 
-            await Assert.ThrowsAsync<AuthorizationException>(() => _offerService.EditCommentAsync(1, comment, default));
+            Func<Task> act = async () => await _offerService.EditCommentAsync(1, comment, default);
+            await act.Should().ThrowAsync<AuthorizationException>();
         }
     }
 }
