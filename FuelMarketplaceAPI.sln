@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34003.232
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FuelMarketplace.API", "FuelMarketplaceAPI\FuelMarketplace.API.csproj", "{AE7CDAAA-AAE7-40BE-8EA1-4B231A573405}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FuelMarketplace.Domain", "FuelMarketplace.Domain\FuelMarketplace.Domain.csproj", "{BBAEA706-7FF1-4810-8EE6-300980639F3E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FuelMarketplace.Application", "FuelMarketplace.Application\FuelMarketplace.Application.csproj", "{23E374B8-FDA6-4CD6-9B02-E1E527AF2F39}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FuelMarketplace.Infrastructure", "FuelMarketplace.Infrastructure\FuelMarketplace.Infrastructure.csproj", "{8F509B16-3F74-408D-8F5D-5232D20D6B30}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FuelMarketplace.Shared", "FuelMarketplaceApi.Shared\FuelMarketplace.Shared.csproj", "{45CB78B5-5BF4-42EA-A406-1489FC5FFC10}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuelMarketplace.Tests", "FuelMarketplace.Tests\FuelMarketplace.Tests.csproj", "{2B355795-E5C4-4E34-BB5A-DD81F1C6534F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AE7CDAAA-AAE7-40BE-8EA1-4B231A573405}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE7CDAAA-AAE7-40BE-8EA1-4B231A573405}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE7CDAAA-AAE7-40BE-8EA1-4B231A573405}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE7CDAAA-AAE7-40BE-8EA1-4B231A573405}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBAEA706-7FF1-4810-8EE6-300980639F3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBAEA706-7FF1-4810-8EE6-300980639F3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBAEA706-7FF1-4810-8EE6-300980639F3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBAEA706-7FF1-4810-8EE6-300980639F3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23E374B8-FDA6-4CD6-9B02-E1E527AF2F39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23E374B8-FDA6-4CD6-9B02-E1E527AF2F39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23E374B8-FDA6-4CD6-9B02-E1E527AF2F39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23E374B8-FDA6-4CD6-9B02-E1E527AF2F39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F509B16-3F74-408D-8F5D-5232D20D6B30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F509B16-3F74-408D-8F5D-5232D20D6B30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F509B16-3F74-408D-8F5D-5232D20D6B30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F509B16-3F74-408D-8F5D-5232D20D6B30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45CB78B5-5BF4-42EA-A406-1489FC5FFC10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45CB78B5-5BF4-42EA-A406-1489FC5FFC10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45CB78B5-5BF4-42EA-A406-1489FC5FFC10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45CB78B5-5BF4-42EA-A406-1489FC5FFC10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B355795-E5C4-4E34-BB5A-DD81F1C6534F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B355795-E5C4-4E34-BB5A-DD81F1C6534F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B355795-E5C4-4E34-BB5A-DD81F1C6534F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B355795-E5C4-4E34-BB5A-DD81F1C6534F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AE281C4D-716C-48BB-8B97-1334D36AAA06}
+	EndGlobalSection
+EndGlobal
